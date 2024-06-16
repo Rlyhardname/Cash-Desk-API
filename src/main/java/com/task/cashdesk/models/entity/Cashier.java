@@ -1,7 +1,7 @@
 package com.task.cashdesk.models.entity;
 
 public class Cashier {
-    private String name;
+    private final String name;
     private int numOfDailyDeposits;
     private int numOfDailyWithdraws;
 

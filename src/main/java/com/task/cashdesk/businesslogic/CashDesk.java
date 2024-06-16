@@ -126,8 +126,6 @@ public class CashDesk {
                 Writer.writeDepositToTxt(cashDTO, operation);
             }
         } catch (NoSuchFileException e) {
-            // log(e)
-            System.err.println("files doesn't exist");
             Writer.writeDepositToTxt(cashDTO, operation);
         }
     }
