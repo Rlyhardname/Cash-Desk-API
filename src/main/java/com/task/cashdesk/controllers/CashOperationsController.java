@@ -4,7 +4,7 @@ import com.task.cashdesk.exceptions.DuplicateOperationException;
 import com.task.cashdesk.exceptions.LackOfBillsException;
 import com.task.cashdesk.exceptions.WrongTotalAmountToBillsException;
 import com.task.cashdesk.models.dto.CashDTO;
-import com.task.cashdesk.services.CashService;
+import com.task.cashdesk.services.CashOperationsService;
 import com.task.cashdesk.utils.ApiKeyValidator;
 import com.task.cashdesk.utils.BillsValidator;
 import jakarta.validation.Valid;
@@ -20,12 +20,12 @@ import static com.task.cashdesk.exceptions.messages.ValidationMessages.NOT_ENOUG
 @RequestMapping("/api/v1/cash-operations/")
 public class CashOperationsController {
 
-    private final CashService cashService;
+    private final CashOperationsService cashOperationsService;
 
 
     @Autowired
-    public CashOperationsController(CashService cashService) {
-        this.cashService = cashService;
+    public CashOperationsController(CashOperationsService cashOperationsService) {
+        this.cashOperationsService = cashOperationsService;
     }
 
     @PostMapping("")
@@ -37,7 +37,7 @@ public class CashOperationsController {
 
         try {
             BillsValidator.validate(cashDTO);
-            cashService.executeOperation(cashDTO);
+            cashOperationsService.executeOperation(cashDTO);
         } catch (WrongTotalAmountToBillsException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
         } catch (DuplicateOperationException e) {
