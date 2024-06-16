@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "1901e56e-f33b-4917-b880-633740f2d6bd",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "36354235"
+	},
+	"item": [
+		{
+			"name": "1 Withdraw",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "apiKey",
+						"value": "f9Uie8nNf112hx8s",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"referenceNumber\": \"1001\",\r\n  \"operation\": \"withdraw\",\r\n  \"date\": \"2020-06-16\",\r\n  \"threeLetterCurrencyCode\": \"BGN\",\r\n  \"amount\": 100,\r\n  \"ones\": 0,\r\n  \"fives\": 0,\r\n  \"tens\": 5,\r\n  \"twenties\": 0,\r\n  \"fifties\": 1,\r\n  \"hundreds\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/cash-operations/"
+			},
+			"response": []
+		},
+		{
+			"name": "2 Withdraw",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "apiKey",
+						"value": "f9Uie8nNf112hx8s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"referenceNumber\": \"1002\",\r\n  \"operation\": \"withdraw\",\r\n  \"date\": \"2020-06-16\",\r\n  \"threeLetterCurrencyCode\": \"EUR\",\r\n  \"amount\": 500,\r\n  \"ones\": 0,\r\n  \"fives\": 0,\r\n  \"tens\": 0,\r\n  \"twenties\": 0,\r\n  \"fifties\": 10,\r\n  \"hundreds\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/cash-operations/"
+			},
+			"response": []
+		},
+		{
+			"name": "3 Deposit",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "apiKey",
+						"value": "f9Uie8nNf112hx8s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"referenceNumber\": \"2001\",\r\n  \"operation\": \"deposit\",\r\n  \"date\": \"2020-06-16\",\r\n  \"threeLetterCurrencyCode\": \"BGN\",\r\n  \"amount\": 600,\r\n  \"ones\": 0,\r\n  \"fives\": 0,\r\n  \"tens\": 10,\r\n  \"twenties\": 0,\r\n  \"fifties\": 10,\r\n  \"hundreds\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/cash-operations/"
+			},
+			"response": []
+		},
+		{
+			"name": "4 Deposit",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "apiKey",
+						"value": "f9Uie8nNf112hx8s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": "http://localhost:8080/api/v1/cash-operations/"
+			},
+			"response": []
+		},
+		{
+			"name": "5 BalanceCheck",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "apiKey",
+						"value": "f9Uie8nNf112hx8s",
+						"type": "text"
+					}
+				],
+				"url": "http://localhost:8080/api/v1/cash-balance"
+			},
+			"response": []
+		}
+	]
+}
