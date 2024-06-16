@@ -17,16 +17,21 @@ public class Cashier {
         numOfDailyWithdraws++;
     }
 
-    public void deposit() {
-
-    }
-
-    public void withdraw() {
-
-    }
-
-    public boolean hasMadeDepositWithdrawRequirements() {
+    public boolean hasMadeDepositAndWithdrawRequirements() {
         return numOfDailyWithdraws > 1 && numOfDailyDeposits > 1;
+    }
+
+    public String getRequirementsQuota() {
+        int deposits = 0;
+        int withdraws = 0;
+        if (numOfDailyDeposits < 2) {
+            deposits = 2 - numOfDailyDeposits;
+        }
+        if (numOfDailyWithdraws < 2) {
+            withdraws = 2 - numOfDailyWithdraws;
+        }
+
+        return "CashDesk requires " + deposits + " more deposits and " + withdraws + " more withdraws before balance check is available";
     }
 
     public String getName() {
